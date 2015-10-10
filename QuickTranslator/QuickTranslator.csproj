@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{8155FAF0-0663-43CC-AF38-E7387C772287}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>QuickTranslator</RootNamespace>
+    <AssemblyName>QuickTranslator</AssemblyName>
+    <StartupObject>QuickTranslator.Program</StartupObject>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="QuickTranslator\" />
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="QuickTranslator\Configuration.cs" />
+    <Compile Include="QuickTranslator\ConfigurationPanel.cs" />
+    <Compile Include="QuickTranslator\DocumentPanel.cs" />
+    <Compile Include="QuickTranslator\ExportToWordForm.cs" />
+    <Compile Include="QuickTranslator\FindAndReplaceForm.cs" />
+    <Compile Include="QuickTranslator\MainForm.cs" />
+    <Compile Include="QuickTranslator\PostTTVForm.cs" />
+    <Compile Include="QuickTranslator\PostTTVFormSettings.cs" />
+    <Compile Include="QuickTranslator\Program.cs" />
+    <Compile Include="QuickTranslator\ScrollingRichTextBox.cs" />
+    <Compile Include="QuickTranslator\Shortcuts.cs" />
+    <Compile Include="QuickTranslator\UpdatePhienAmForm.cs" />
+    <Compile Include="QuickTranslator\UpdateVietPhraseForm.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TranslatorEngine\TranslatorEngine.csproj">
+      <Project>{846BBEE9-9516-4984-A9D6-493281E26A05}</Project>
+      <Name>TranslatorEngine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WinFormsUI\WinFormsUI.csproj">
+      <Project>{C75532C4-765B-418E-B09B-46D36B2ABDB1}</Project>
+      <Name>WinFormsUI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QuickTranslator.ConfigurationPanel.resources" />
+    <None Include="Resources\QuickTranslator.UpdateVietPhraseForm.resources" />
+  </ItemGroup>
+</Project>
